@@ -1,6 +1,9 @@
 public class MyArrays{
   public static void main(String[] args){
 
+    int[] ary = {1, 2, 3, 4, 5,};
+    System.out.println("arrayToString(" + ary + "): " + arrayToString(ary));
+
   }
 
   public static String arrayToString(int[] nums){
@@ -11,6 +14,6 @@ public class MyArrays{
         ans += ", ";
       }
     }
-    return ans += ",";
+    return ans += "]";
   }
 }
