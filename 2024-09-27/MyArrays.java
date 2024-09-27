@@ -4,6 +4,9 @@ public class MyArrays{
     int[] ary = {1, 2, 3, 4, 5,};
     System.out.println("arrayToString(" + ary + "): " + arrayToString(ary));
 
+    // Test returnCopy()
+    //System.out.println(arrayToString(ary).equals(arrayToString(returnCopy(ary))));
+
   }
 
   public static String arrayToString(int[] nums){
@@ -16,4 +19,11 @@ public class MyArrays{
     }
     return ans += "]";
   }
+
+  public static String returnCopy(int[] ary){
+    int[] ans = new int[ary.length];
+    return ans;
+  }
+
+
 }
