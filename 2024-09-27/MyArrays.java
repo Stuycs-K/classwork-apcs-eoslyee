@@ -5,12 +5,18 @@ public class MyArrays{
 
     System.out.println("arrayToString(" + ary + "): " + arrayToString(ary));
 
-    //Test returnCopy()
+    // Test returnCopy()
     String aryContent = arrayToString(ary);
     int[] aryCopy = returnCopy(ary);
 
     System.out.println(arrayToString(aryCopy));
     System.out.println(aryContent.equals(arrayToString(aryCopy)) && (ary != aryCopy));
+
+    // Test concatArray()
+    int[] ary1 = "Hi, this is APCS";
+    int[] ary2 = "with Mr. Konstantinovich";
+
+    System.out.println(arrayToSring(concatArray(ary1, ary2)));
   }
 
   public static String arrayToString(int[] nums){
@@ -32,5 +38,18 @@ public class MyArrays{
     return ans;
   }
 
+  public static int[] concatArrady(int[] ary1, int[] ary2){
+    int[] ans = new int[ary1.length + ary2.length];
+    int i = 0; 
+    while (i < ary1.length){
+      ans[i] = ary1[i];
+      i++;
+    }
+    while (i < ary2.length){
+      ans[i+ary1.length-1] = ary2[i];
+      i++;
+    }
+    return ans;
+  }
 
 }
