@@ -7,6 +7,14 @@ public class ArrayMethods{
     System.out.println(arrToString(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
     System.out.println(arrToString(new int[3][4]));
 
+    // Test arr2DSum 
+    System.out.println("Expected "+(1+2+5+6+0+3+5) + ", Returned" + arr2DSum(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
+    System.out.println("Expected 0, Returned " + arr2DSum(new int[3][4]));
+
+    // Test swapRC
+    System.out.println("swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}:" + arrToString(swapRC(new int[][]{{1,2,3},{4,5,6}})));
+    System.out.println("swapRC({{2,3}, {1,5}, {8,9} {10,8}}) returns {{2,1,8,10},{3,5,9.8}})" + arrToString(swapRC(new int[][] {{2,3},{1,5},{8,9},{10,8}})));
+
 }
 
     //2. Copy your arrToString method from before.
@@ -47,15 +55,28 @@ public class ArrayMethods{
     }
 
 // /*Return the sum of all of the values in the 2D array */
-// public static int arr2DSum(int[][]nums){
-//   //use a nested loop to solve this
-// }
-//
+// Use a nested loop 
+  public static int arr2DSum(int[][]nums){
+    int sum = 0; 
+    for (int i = 0; i < nums.length; i ++){
+      for (int index = 0; index < nums[i].length; index ++){
+        sum += nums[i][index];
+      }
+    }
+    return sum; 
+  }
+
 // /**Rotate an array by returning a new array with the rows and columns swapped.
 //   * You may assume the array is rectangular and neither rows nor cols is 0.
 //   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
-//   */
-// public static int[][] swapRC(int[][]nums){
-//   return new int[1][1];
-// }
+
+  public static int[][] swapRC(int[][]nums){
+    int[][] ans = new int[nums[0].length][nums.length];
+    for (int i = 0; i < ans.length; i ++){
+      for (int index = 0; index < ans[i].length; index ++){
+        ans[i][index] = nums[index][i];  
+      }
+    }
+    return ans;
+  }
 }
