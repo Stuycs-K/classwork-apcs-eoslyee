@@ -26,12 +26,23 @@ public class ArrayMethods{
 
     //Test copy 
     System.out.println("---Testing returnCopy for 1D Array---");
-    int[] ary = {1, 2, 3, 4, 5,};
+    int[] ary = {1, 2, 3, 4, 5};
     String aryContent = arrToString(ary);
     int[] aryCopy = returnCopy(ary);
 
     System.out.println(arrToString(aryCopy));
-    System.out.println(aryContent.equals(arrToString(aryCopy)) && (ary != aryCopy));
+    System.out.println("Contents are equal but addresses are not: " + (aryContent.equals(arrToString(aryCopy)) && (ary != aryCopy)));
+
+    System.out.println("-----Tests for copy-----");
+    int[][] Ary = new int[][]{{1, 2, 3}, {2, 3}, {0}};
+    int[][] AryCopy = copy(Ary);
+    System.out.println("Original Array: " + arrToString(Ary));
+    System.out.println("Array Copy: " + arrToString(AryCopy));
+    System.out.println("Contents are equal but addresses are not: " + (arrToString(Ary).equals(arrToString(AryCopy)) && (Ary != AryCopy)));
+    
+    Ary = new int[][]{{2,3,4},{1,2},{10}};
+    System.out.println("Array Copy: " + arrToString(AryCopy));
+
 
 }
 
@@ -125,7 +136,11 @@ public static void replaceNegative(int[][] vals){
 //You SHOULD write a helper method for this.
 //If you don't see a good way to do that, you should stop and look at prior methods.
 public static int[][] copy(int[][] nums){
-  return null;//placeholder so it compiles
+  int[][] ans = new int[nums.length][];
+  for (int i = 0; i < nums.length; i ++){
+    ans[i] = returnCopy(nums[i]);
+  }
+  return ans;//placeholder so it compiles
 }
 
  public static int[] returnCopy(int[] ary){
