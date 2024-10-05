@@ -24,7 +24,14 @@ public class ArrayMethods{
     System.out.println("Expected Output: [[1, 3, 5], [5, 2, 8], [0]]"); replaceNegative(new int[][]{{1, 3, 5}, {5, 2, 8}, {0}});
     System.out.println("Expected Output: [[1, 0, 0], [0, 2, 0], [0]]"); replaceNegative(new int[][]{{1, -3, -5}, {-5, 2, -8}, {-9}});
 
+    //Test copy 
+    System.out.println("---Testing returnCopy for 1D Array---");
+    int[] ary = {1, 2, 3, 4, 5,};
+    String aryContent = arrToString(ary);
+    int[] aryCopy = returnCopy(ary);
 
+    System.out.println(arrToString(aryCopy));
+    System.out.println(aryContent.equals(arrToString(aryCopy)) && (ary != aryCopy));
 
 }
 
@@ -120,6 +127,14 @@ public static void replaceNegative(int[][] vals){
 public static int[][] copy(int[][] nums){
   return null;//placeholder so it compiles
 }
+
+ public static int[] returnCopy(int[] ary){
+    int[] ans = new int[ary.length];
+    for (int i = 0; i < ary.length; i ++){
+      ans[i] = ary[i];
+    }
+    return ans;
+  }
 
 }
 
