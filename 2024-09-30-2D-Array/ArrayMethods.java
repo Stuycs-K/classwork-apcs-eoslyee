@@ -4,16 +4,16 @@ public class ArrayMethods{
     // Estella; eyee60@stuy.edu.
 
     // Test arrToString with 2D parameter
-    System.out.println(arrToString(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
-    System.out.println(arrToString(new int[3][4]));
+    System.out.println("Expected [[1,2], [5,6], [0,3,5]], Returned " + arrToString(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
+    System.out.println("Expected [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], Returned " + arrToString(new int[3][4]));
 
     // Test arr2DSum 
-    System.out.println("Expected "+(1+2+5+6+0+3+5) + ", Returned" + arr2DSum(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
+    System.out.println("Expected "+(1+2+5+6+0+3+5) + ", Returned " + arr2DSum(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
     System.out.println("Expected 0, Returned " + arr2DSum(new int[3][4]));
 
     // Test swapRC
-    System.out.println("swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}:" + arrToString(swapRC(new int[][]{{1,2,3},{4,5,6}})));
-    System.out.println("swapRC({{2,3}, {1,5}, {8,9} {10,8}}) returns {{2,1,8,10},{3,5,9.8}})" + arrToString(swapRC(new int[][] {{2,3},{1,5},{8,9},{10,8}})));
+    System.out.println("Expected [[1,4],[2,5],[3,6], Returned:" + arrToString(swapRC(new int[][]{{1,2,3},{4,5,6}})));
+    System.out.println("Expected [[2,1,8,10],[3,5,9.8]], Returned: " + arrToString(swapRC(new int[][] {{2,3},{1,5},{8,9},{10,8}})));
 
 }
 
