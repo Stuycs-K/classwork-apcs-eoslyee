@@ -41,6 +41,7 @@ public class ArrayMethods{
     System.out.println("Contents are equal but addresses are not: " + (arrToString(Ary).equals(arrToString(AryCopy)) && (Ary != AryCopy)));
     
     Ary = new int[][]{{2,3,4},{1,2},{10}};
+    System.out.println(arrToString(Ary));
     System.out.println("Array Copy: " + arrToString(AryCopy));
 
 
