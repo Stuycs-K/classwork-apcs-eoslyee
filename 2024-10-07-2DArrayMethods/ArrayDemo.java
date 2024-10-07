@@ -6,6 +6,16 @@
       //Compare Arrays.toString(yourArray) to YOUR arrayToString() method to make sure yours is correct
       //do not use any other Arrays.method()
 
+
+      // TESTS arrToString
+      int[] ary = new int[]{1, 2, 3};
+      System.out.println("-----Test arrToString-----");
+      System.out.println("Expected" + Arrays.toString(ary) + ", Returned" + arrToString(ary));
+
+      // 2DarrToString
+      System.out.println("-----Test arrToString with 2D parameter-----");
+      System.out.println("Expected [[1,2], [5,6], [0,3,5]], Returned " + arrToString(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
+      System.out.println("Expected [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], Returned " + arrToString(new int[3][4]));
     }
 
     //0. Include your prior methods to help you print a 1D/2D array of ints.
