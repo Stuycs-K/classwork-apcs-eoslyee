@@ -15,15 +15,21 @@
       ary = new int[]{4, 5, 0, 9, 10}; 
       System.out.println("Expected " + Arrays.toString(ary) + ", Returned " + arrToString(ary));
 
-      
-
       // 2DarrToString
       System.out.println("-----Test arrToString with 2D parameter-----");
 
       int[][] ary2 = new int[][]{{1, 2}, {5, 6}, {0, 3, 5}};
       System.out.println("Expected " + Arrays.toString(ary2) + ", Returned " + arrToString(ary2));
-      ary2 = new int[0][0]; 
+      ary2 = new int[4][3]; 
       System.out.println("Expected " + Arrays.toString(ary2) + ", Returned " + arrToString(ary2));
+
+      // countZeros2D 
+      System.out.println("-----Test countZeros2D-----");
+      
+      ary2 = new int[][]{{1, 2}, {5, 6}, {0, 3, 5}};
+      System.out.println("Expected 1, Returned " + countZeros2D(ary2));
+      ary2 = new int[3][4];
+      System.out.println("Expected 12, Returned " + countZeros2D(ary2)); 
     }
 
     //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -54,7 +60,15 @@
 
     //1. Calculate and return how many elements equal zero in the 2D array.
     public static int countZeros2D(int[][] nums){
-      return 0;
+      int count = 0; 
+      for (int i = 0; i < nums.length; i ++){
+        for (int j = 0; j < nums[i].length; j ++){
+          if (nums[i][j] == 0){
+            count ++; 
+          }
+        }
+      }
+      return count; 
     }
 
     //2. Calculate the sum of a 2d array
