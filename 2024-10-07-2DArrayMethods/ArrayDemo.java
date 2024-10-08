@@ -8,22 +8,30 @@
 
 
       // TESTS arrToString
-      int[] ary = new int[]{1, 2, 3};
       System.out.println("-----Test arrToString-----");
-      System.out.println("Expected" + Arrays.toString(ary) + ", Returned" + arrToString(ary));
+
+      int[] ary = new int[]{1, 2, 3};
+      System.out.println("Expected " + Arrays.toString(ary) + ", Returned " + arrToString(ary));
+      ary = new int[]{4, 5, 0, 9, 10}; 
+      System.out.println("Expected " + Arrays.toString(ary) + ", Returned " + arrToString(ary));
+
+      
 
       // 2DarrToString
       System.out.println("-----Test arrToString with 2D parameter-----");
-      System.out.println("Expected [[1,2], [5,6], [0,3,5]], Returned " + arrToString(new int[][] {{1, 2}, {5, 6}, {0, 3, 5}}));
-      System.out.println("Expected [[0, 0, 0, 0], [0, 0, 0, 0], [0, 0, 0, 0]], Returned " + arrToString(new int[3][4]));
+
+      int[][] ary2 = new int[][]{{1, 2}, {5, 6}, {0, 3, 5}};
+      System.out.println("Expected " + Arrays.toString(ary2) + ", Returned " + arrToString(ary2));
+      ary2 = new int[0][0]; 
+      System.out.println("Expected " + Arrays.toString(ary2) + ", Returned " + arrToString(ary2));
     }
 
     //0. Include your prior methods to help you print a 1D/2D array of ints.
     public static String arrToString(int[]ary){
       String ans = "[";
-      for (int i = 0; i < nums.length; i ++){
-        ans += nums[i];
-        if (i != nums.length-1){
+      for (int i = 0; i < ary.length; i ++){
+        ans += ary[i];
+        if (i != ary.length-1){
           ans += ", ";
         }
       }
