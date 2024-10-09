@@ -30,6 +30,12 @@
       System.out.println("Expected 1, Returned " + countZeros2D(ary2));
       ary2 = new int[3][4];
       System.out.println("Expected 12, Returned " + countZeros2D(ary2)); 
+
+      // htmlTable 
+      System.out.println("-----Test htmlTable-----");
+
+      System.out.println("Expected <table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>, Returned " + htmlTable(new int[][]{{1,2},{3}}));
+    // 
     }
 
     //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -146,6 +152,14 @@
     //   e.g. htmlTable(new int[][]{{1,2},{3}})  returns:
     // "<table><tr><td>1</td><td>2</td></tr><tr><td>3</td></tr></table>"
     public static String htmlTable(int[][]nums){
-      return "";
+      String ans = "<table>";
+      for (int i = 0; i < nums.length; i ++){
+        ans += "<tr>";
+        for (int j = 0; j < nums[i].length; j ++){
+          ans += "<td>" + nums[i][j] + "</td>";
+        }
+        ans += "</tr>"; 
+      }
+      return ans; 
     }
   }
