@@ -2,7 +2,8 @@
     private double x,y;
 
     public String toString(){
-      return "WRITE THIS FIRST"
+      String ans = "(" + x + ", " + y + ")"; 
+      return ans;
     }
 
     //Initialize this Point to have the same values as the other Point.
