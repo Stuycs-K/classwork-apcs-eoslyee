@@ -30,7 +30,8 @@
     Write this method FOURTH, go to the main and do that one first.
     */
     public double distanceTo(Point other){
-      return 0.0;
+      double d = Math.sqrt(Math.pow((other.getX()-this.x), 2) + Math.pow((other.getY()-this.x), 2));
+      return d;
     }
 
     /*
@@ -38,7 +39,8 @@
     do not write redundant code.
     */
     public static double distance(Point a, Point b){
-      return 0.0;
+      double d = a.distance(b);
+      return d;
     }
 
 
