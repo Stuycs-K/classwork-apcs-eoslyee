@@ -19,9 +19,9 @@
       System.out.println("-----Test arrToString with 2D parameter-----");
 
       int[][] ary2 = new int[][]{{1, 2}, {5, 6}, {0, 3, 5}};
-      System.out.println("Expected " + Arrays.toString(ary2) + ", Returned " + arrToString(ary2));
+      System.out.println("Expected " + Arrays.deepToString(ary2) + ", Returned " + arrToString(ary2));
       ary2 = new int[4][3]; 
-      System.out.println("Expected " + Arrays.toString(ary2) + ", Returned " + arrToString(ary2));
+      System.out.println("Expected " + Arrays.deepToString(ary2) + ", Returned " + arrToString(ary2));
 
       // countZeros2D 
       System.out.println("-----Test countZeros2D-----");
