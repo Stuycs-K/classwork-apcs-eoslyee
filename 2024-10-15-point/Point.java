@@ -39,7 +39,7 @@
     do not write redundant code.
     */
     public static double distance(Point a, Point b){
-      double d = a.distance(b);
+      double d = a.distanceTo(b);
       return d;
     }
 
