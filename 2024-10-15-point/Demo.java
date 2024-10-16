@@ -8,7 +8,7 @@
     to the others.
     */
     public static double distance(Point a, Point b){
-      double d = Math.sqrt(Math.pow((a.getX-b.getX), 2) + Math.pow((a.getY-b.getY), 2));
+      double d = Math.sqrt(Math.pow((a.getX()-b.getX()), 2) + Math.pow((a.getY()-b.getY()), 2));
       return d;
     }
 
