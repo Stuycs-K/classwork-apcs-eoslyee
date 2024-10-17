@@ -30,7 +30,7 @@
     Write this method FOURTH, go to the main and do that one first.
     */
     public double distanceTo(Point other){
-      double d = Math.sqrt(Math.pow((other.getX()-this.x), 2) + Math.pow((other.getY()-this.x), 2));
+      double d = Math.sqrt(Math.pow((other.getX()-this.x), 2) + Math.pow((other.getY()-this.y), 2));
       return d;
     }
 
