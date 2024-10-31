@@ -23,6 +23,21 @@
       while(input.hasNextInt()){
         sum+=input.nextInt();//read all the numbers and add to sum
       }
+      System.out.println(sum);
+
+      // Stop and test printing out each word one per line:
+      Scanner sc1 = new Scanner("This is a bunch of words");
+      while(sc1.hasNext()){
+        System.out.println(sc1.next());
+      }
+
+      // Stop and test calculating the sum of the values in this string using nextDouble()
+      Scanner sc2 = new Scanner("10.0 1.04 99.0 -3.0 4.2");
+      double sum2 = 0;
+      while (sc2.hasNext()){
+        sum2 += sc2.nextDouble();
+      }
+      System.out.println(sum2);
 
     }
 
