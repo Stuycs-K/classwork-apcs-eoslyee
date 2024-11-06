@@ -11,6 +11,7 @@
         File file = new File("ReadFile.java");//1
         Scanner input = new Scanner(file);
         //CODE THAT SCANS THE FILE.
+        
         // Stop and test opening ReadFile.java and printing every other line of text.
         while(input.hasNextLine()){
           input.nextLine();
@@ -19,11 +20,6 @@
           }
         }
 
-
-
-
-
-
         // Now try changing the program to only print a line of text if it contains a '{' character.
         while(input.hasNextLine()){
           String Input = input.nextLine();
@@ -31,8 +27,6 @@
             System.out.println(Input);
           }
         }
-
-
 
         input.close();//releases the file from your program
       }
