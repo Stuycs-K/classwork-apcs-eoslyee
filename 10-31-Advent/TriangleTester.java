@@ -53,28 +53,33 @@ public class TriangleTester{
         try {
             File file = new File(filename);
             Scanner input = new Scanner(file);
-            
-            // Sort into an array
-            int[][] vals = new int[3][]; 
-            
+                        
             int i = 0; 
             while(input.hasNextLine()){
-                for (int j = 0; j < 3; j ++){
-                    vals[j][i] = input.nextInt(); 
-                    vals[j][i+1] = input.nextInt(); 
-                    vals[j][i+2] = input.nextInt();   
-                }
-                i ++; 
-            }    
+                int a1 = input.nextInt(); 
+                int a2 = input.nextInt(); 
+                int a3 = input.nextInt();   
+                int b1 = input.nextInt(); 
+                int b2 = input.nextInt(); 
+                int b3 = input.nextInt();   
+                int c1 = input.nextInt(); 
+                int c2 = input.nextInt(); 
+                int c3 = input.nextInt();   
 
-            for (int k = 0; k < i;  k ++){
-                int a = vals[0][k];
-                int b = vals[1][k];
-                int c = vals[2][k]; 
-                if (isTriangle(a, b, c)){
-                    count ++; 
+                if(isTriangle(a1, b1, c1)){
+                    count ++;
+                }
+
+                if(isTriangle(a2, b2, c2)){
+                    count ++;
+                }
+
+                if(isTriangle(a3, b3, c3)){
+                    count ++;
                 }
             }
+                i++;
+
             input.close();//releases the file from your program
         }
 
