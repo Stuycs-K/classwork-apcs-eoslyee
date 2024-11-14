@@ -5,10 +5,11 @@ public class ArrayListPractice{
 
     int input = (int)(Math.random()*200000);
     System.out.println(createRandomArray(4));
-    ArrayList<String> inputal= createRandomArray(5);
+    ArrayList<String> inputal= createRandomArray(20);
     System.out.println("Input: " + inputal);
     replaceEmpty(inputal);
-    System.out.println("Result: " + inputal);
+    System.out.println("Result (replaceEmpty): " + inputal);
+    System.out.println("Result (makeReversedList): " + makeReversedList(inputal));
   //  inputal= createRandomArray(input);
   //  System.out.println("Input: " + inputal);
   //  replaceEmpty(inputal);
@@ -31,13 +32,22 @@ public class ArrayListPractice{
   }
 
   public static void replaceEmpty( ArrayList<String> original){
-  //Modify the ArrayList such that it has all of the empty strings are
-  //replaced with the word "Empty".
-  for(int i = 0; i < original.size(); i++){
-    if(original.get(i).equals("")){
-      original.set(i, "Empty");
+    //Modify the ArrayList such that it has all of the empty strings are
+    //replaced with the word "Empty".
+    for(int i = 0; i < original.size(); i++){
+      if(original.get(i).equals("")){
+        original.set(i, "Empty");
+      }
     }
   }
-}
+
+  public static ArrayList<String> makeReversedList( ArrayList<String> original){
+    //return a new ArrayList that is in the reversed order of the original.
+    ArrayList<String> ans = new ArrayList<String>(original.size());
+    for(int i = original.size()-1; i >= 0; i--){
+      ans.add(original.get(i));
+    }
+    return ans;
+  }
 
 }
