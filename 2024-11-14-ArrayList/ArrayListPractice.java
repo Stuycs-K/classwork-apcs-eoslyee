@@ -6,10 +6,15 @@ public class ArrayListPractice{
     int input = (int)(Math.random()*200000);
     System.out.println(createRandomArray(4));
     ArrayList<String> inputal= createRandomArray(20);
+    ArrayList<String> inputal2= createRandomArray(11);
+
     System.out.println("Input: " + inputal);
     replaceEmpty(inputal);
     System.out.println("Result (replaceEmpty): " + inputal);
     System.out.println("Result (makeReversedList): " + makeReversedList(inputal));
+
+    System.out.println("Inputs: " + inputal + )
+
   //  inputal= createRandomArray(input);
   //  System.out.println("Input: " + inputal);
   //  replaceEmpty(inputal);
@@ -50,4 +55,25 @@ public class ArrayListPractice{
     return ans;
   }
 
+  public static ArrayList<String> mixLists( ArrayList<String> a,  ArrayList<String> b){
+  //return a new ArrayList that has all values of a and b in alternating order that is:
+  //a[0], b[0], a[1], b[1]...
+  //If one list is longer than the other, just attach the remaining values to the end.
+  ArrayList<String> ans = new ArrayList<String>(a.size() + b.size());
+  int i = 0;
+  while(i < Math.min(a.size(), b.size())){
+    ans.add(a.get(i));
+    ans.add(b.get(i));
+    i ++;
+  }
+  while (i < a.size()){
+    ans.add(a.get(i));
+    i ++;
+  }
+  while (i < b.size()){
+    ans.add(b.get(i));
+    i ++;
+  }
+  return ans;
+}
 }
