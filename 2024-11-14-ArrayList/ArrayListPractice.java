@@ -5,15 +5,16 @@ public class ArrayListPractice{
 
     int input = (int)(Math.random()*200000);
     System.out.println(createRandomArray(4));
-    ArrayList<String> inputal= createRandomArray(20);
-    ArrayList<String> inputal2= createRandomArray(11);
+    ArrayList<String> inputal= createRandomArray(3);
+    ArrayList<String> inputal2= createRandomArray(5);
 
     System.out.println("Input: " + inputal);
     replaceEmpty(inputal);
     System.out.println("Result (replaceEmpty): " + inputal);
     System.out.println("Result (makeReversedList): " + makeReversedList(inputal));
 
-    System.out.println("Inputs: " + inputal + )
+    // Example: mixLists(["1","3","5"],["2","4","6","8","10"]) would return the array list: [1,2,3,4,5,6,8,10] .
+    System.out.println("Inputs: " + inputal + ", " + inputal2 + mixLists(inputal, inputal2));
 
   //  inputal= createRandomArray(input);
   //  System.out.println("Input: " + inputal);
