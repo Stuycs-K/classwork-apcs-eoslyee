@@ -9,7 +9,7 @@ public class dayTwo {
   }
 
   // public static String[] parse(String filename){
-  //
+  //   String[] data = filename.split(" ");
   // }
 
 
@@ -23,14 +23,17 @@ public class dayTwo {
       Scanner input = new Scanner(file);
 
       while (input.hasNextLine()){
-        String +=
+        String line = input.nextLine();
+        for (int i = 0; i < line.length(); i ++){
+          String dir = line.charAt(i); 
+        }
       }
 
 
 
       input.close();//releases the file from your program
       }
-
+3
 
     catch (FileNotFoundException ex) {
       //File not found what should you do?
