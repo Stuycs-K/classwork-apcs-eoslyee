@@ -26,7 +26,15 @@ public class dayTwo {
         String line = input.nextLine();
         for (int i = 0; i < line.length(); i ++){
           String dir = line.charAt(i); 
+          int[][] increment = new int[][] {{0, 1}, {1, 0}, {0, -1}, {-1, 0}}; 
+          if ((x!=0 || x!= 2) && (y!=0 || y!= 2)){
+
+          }
+          else {
+            code += keypad[x][y]; 
+          }
         }
+        code += keypad[x][y]; 
       }
 
 
