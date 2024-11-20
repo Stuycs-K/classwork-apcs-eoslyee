@@ -15,33 +15,29 @@ public class dayTwo {
     String[][] keypad = new String[][]{{"1", "4", "7"}, {"2", "5", "8"}, {"3", "6", "9"}};
     String code = "";
     try {
-      File file = new File(filename); 
+      File file = new File(filename);
       Scanner input = new Scanner(file);
 
       while (input.hasNextLine()){
         String line = input.nextLine();
-        System.out.println(line); 
+        System.out.println(line);
         for (int i = 0; i < line.length(); i ++){
-          String dir = line.substring(i, i+1); 
+          String dir = line.substring(i, i+1);
           if (dir.equals("R") && (x!=2)){
-            x ++; 
+            x ++;
           }
           if (dir.equals("L") && (x!=0)){
-            x --; 
+            x --;
           }
-          if (dir.equals("U") && (y!=2)){
-            y ++; 
+          if (dir.equals("U") && (y!=0)){
+            y --;
           }
-          if (dir.equals("D") && (y!=0)){
-            y --; 
-          }
-          else {
-            code += keypad[x][y]; 
+          if (dir.equals("D") && (y!=2)){
+            y ++;
           }
         }
-        code += keypad[x][y]; 
+        code += keypad[x][y];
       }
-      input.nextLine(); 
       input.close();//releases the file from your program
       }
 
