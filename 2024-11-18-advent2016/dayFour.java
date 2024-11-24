@@ -9,12 +9,10 @@ public class dayFour {
     String filename = "inputFour.txt";
     System.out.println(p1(filename));
 
-    int[] testMaxAry = new int[]{1, 2, 3, 2, 3, 5}; 
-    System.out.println(returnMax(testMaxAry)); 
-    System.out.println(returnMax(testMaxAry)); 
+    // int[] testMaxAry = new int[]{1, 2, 3, 2, 3, 5}; 
+    // System.out.println(returnMax(testMaxAry)); 
+    // System.out.println(returnMax(testMaxAry)); 
 
-    String testRoom = "aaaaa-bbb-z-y-x-123[abxyz]"; 
-    System.out.println(checkRoom(testRoom)); // Should return true 
   }
   
   // Return the character with the most occurances in the line 
@@ -33,7 +31,8 @@ public class dayFour {
 
   // Return true if the checkSum properly represents the line
   public static boolean checkRoom(String room){
-    String checkSum = room.substring(room.indexOf("["), room.length()-1); 
+    String checkSum = room.substring(room.indexOf("[") + 1, room.length()-1); 
+    //System.out.println(checkSum);
     int [] alphabet = new int[26];
     String realRoom = ""; 
     // For every letter in the code (before the []), add 1 to the alphabet. 
@@ -45,11 +44,11 @@ public class dayFour {
             alphabet[charIndex] ++; 
         }
     }
-    System.out.println(Arrays.toString(alphabet));
+    //System.out.println(Arrays.toString(alphabet));
     for (int i = 0; i < 5; i ++){
         realRoom += returnMax(alphabet); 
     }
-    System.out.println(realRoom);
+    //System.out.println(realRoom);
     return (realRoom.equals(checkSum)); 
   }
 
@@ -63,10 +62,10 @@ public class dayFour {
 
       while (input.hasNextLine()){
         String room = input.nextLine();
-        String checkSum = room.substring(room.indexOf("["), room.length()-1); 
-        System.out.println(room);
+        String code = room.substring(room.lastIndexOf("-") + 1, room.lastIndexOf("-") + 4); 
+        //System.out.println(code); 
         if (checkRoom(room)){
-            sum += Integer.parseInt(checkSum); 
+            sum += Integer.parseInt(code);
         } 
       }
       input.close();//releases the file from your program
