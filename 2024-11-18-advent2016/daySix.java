@@ -9,7 +9,7 @@ public class daySix{
         //System.out.println(countLines(filename)); 
         System.out.println(p1(filename));
 
-        //System.out.println(Max(new char[] {'a', 'e', 'i', 'o', 'u', 'a'}));
+        System.out.println(Min(new char[] {'a', 'e', 'e', 'e', 'u', 'a'}));
 
     }
 
@@ -48,6 +48,25 @@ public class daySix{
         return maxChar; 
     }
 
+    public static char Min(char[] column){
+        int[] alphabet = new int[26]; 
+        for (int i = 0; i < column.length; i ++){
+            int charIndex = column[i] - 'a';
+            alphabet[charIndex] ++; 
+        }
+        //System.out.println(Arrays.toString(alphabet));
+        int min = 1000; 
+        char minChar = Max(column); 
+        for (int i = 0; i < alphabet.length; i ++){
+            if (alphabet[i] < min && alphabet[i] != 0){
+                min = alphabet[i]; 
+                minChar = (char)(i + 'a'); 
+            }
+        }
+        return minChar; 
+    }
+
+
     public static String p1(String filename){
     char[][] data = new char[6][countLines(filename)]; 
     String code = "";
@@ -64,7 +83,8 @@ public class daySix{
       }
     
       for (int i = 0; i < data.length; i ++){
-        code += "" + Max(data[i]); 
+        // code += "" + Max(data[i]); 
+        code += "" + Min(data[i]);
       }
       //System.out.println(Arrays.deepToString(data));
       input.close();//releases the file from your program
