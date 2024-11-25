@@ -68,7 +68,7 @@ public class daySix{
 
 
     public static String p1(String filename){
-    char[][] data = new char[6][countLines(filename)]; 
+    char[][] data = new char[8][countLines(filename)]; 
     String code = "";
     try {
       File file = new File(filename);
