@@ -6,15 +6,50 @@ import java.util.Arrays;
 public class daySix{
     public static void main (String[] args){
         String filename = "inputSix.txt";
+        //System.out.println(countLines(filename)); 
         System.out.println(p1(filename));
+
+        //System.out.println(Max(new char[] {'a', 'e', 'i', 'o', 'u', 'a'}));
+
     }
 
-    public static String Max(String[] column){
-        return "a"; 
+    public static int countLines(String filename){
+        int count = 0; 
+        try {
+            File file = new File(filename); 
+            Scanner input = new Scanner(file); 
+            while (input.hasNextLine()){
+                input.nextLine(); 
+                count ++; 
+            }
+            input.close(); 
+        }
+        catch (FileNotFoundException e){
+            System.out.println("File not found");
+        }
+        return count;
+    }
+
+    public static char Max(char[] column){
+        int[] alphabet = new int[26]; 
+        for (int i = 0; i < column.length; i ++){
+            int charIndex = column[i] - 'a';
+            alphabet[charIndex] ++; 
+        }
+        //System.out.println(Arrays.toString(alphabet));
+        int max = 0; 
+        char maxChar = 'a'; 
+        for (int i = 0; i < alphabet.length; i ++){
+            if (alphabet[i] > max){
+                max = alphabet[i]; 
+                maxChar = (char)(i + 'a'); 
+            }
+        }
+        return maxChar; 
     }
 
     public static String p1(String filename){
-    String[][] data = new String[6][]; 
+    char[][] data = new char[6][countLines(filename)]; 
     String code = "";
     try {
       File file = new File(filename);
@@ -23,9 +58,15 @@ public class daySix{
       while (input.hasNextLine()){
         String line = input.nextLine(); 
         for (int i = 0; i < line.length(); i ++){
-            data[column][i] = line.substring(i, i+1); 
+            data[i][column] = line.charAt(i); 
         }
+        column ++; 
       }
+    
+      for (int i = 0; i < data.length; i ++){
+        code += "" + Max(data[i]); 
+      }
+      //System.out.println(Arrays.deepToString(data));
       input.close();//releases the file from your program
       }
 
