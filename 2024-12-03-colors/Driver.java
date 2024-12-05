@@ -1,9 +1,13 @@
+import java.util.Random;
+import java.util.Arrays;
+
 public class Driver{
     public static void main(String[] args){
 
         System.out.print(Text.CLEAR_SCREEN);
         System.out.print(Text.HIDE_CURSOR);
-
+        
+        // Make Box 80x30
         int width = 80, height = 30; 
         Text.color((Text.BLUE), Text.background(Text.BLUE), Text.BRIGHT); 
         Text.go(1,1);
@@ -22,8 +26,32 @@ public class Driver{
         Text.go(height, 1); 
         for (int i = 0; i < width; i ++){
             System.out.print(" ");
+        }  
+
+        // Make Random Array 
+        int[] randomArray = new int[3];
+        for (int i = 0; i < 3; i ++){
+        randomArray[i] = (int)(Math.random() * 100);
+        }
+        //System.out.println(Arrays.toString(randomArray));
+
+        int space = width/4; 
+        Text.go(2, space-2); 
+        for (int i = 0; i <3; i ++){
+            int s = randomArray[i];
+            if (s < 25){
+                Text.color(Text.RED, Text.BRIGHT);
+            }
+            else if (s > 75){
+                Text.color(Text.GREEN, Text.BRIGHT);
+            }
+            else {
+                Text.color(Text.WHITE);
+            }
+            System.out.print(s);
+            Text.go(2, ((i+2)*space-2));
         }
 
-        System.out.print(Text.RESET);
+
     }
 }
