@@ -52,6 +52,21 @@ public class Driver{
             Text.go(2, ((i+2)*space-2));
         }
 
+        // Horizontal separator
+        Text.go(3,2); 
+        Text.color(Text.GREEN, Text.BRIGHT);
+        for (int i = 0; i < width-2; i++){
+            System.out.print("=");
+        }
+
+        // Something in the Middle 
+        Text.go(height/2, width/2-2);
+        Text.color(Text.MAGENTA, Text.BRIGHT); 
+        System.out.print("(0)~~[]~~,(0)");
+
+        Text.go(31, 1); 
+        System.out.print(Text.RESET);
+
 
     }
 }
