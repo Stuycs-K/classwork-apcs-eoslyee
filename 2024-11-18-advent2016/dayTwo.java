@@ -20,7 +20,7 @@ public class dayTwo {
 
       while (input.hasNextLine()){
         String line = input.nextLine();
-        System.out.println(line);
+        //System.out.println(line);
         for (int i = 0; i < line.length(); i ++){
           String dir = line.substring(i, i+1);
           if (dir.equals("R") && (x!=2)){
