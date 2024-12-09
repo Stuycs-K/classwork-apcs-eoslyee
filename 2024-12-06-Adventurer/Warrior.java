@@ -8,6 +8,10 @@ public class Warrior extends Adventurer{
         this.rage = 0;
         this.maxRage = 10;
     }
+
+    public Warrior(String name){
+      this(name, 20);
+    }
     public String getSpecialName(){
         return "Rage";
     }
