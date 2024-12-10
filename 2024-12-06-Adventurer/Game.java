@@ -19,6 +19,7 @@ public class Game {
       System.out.println("Enemy stats: Health =" + enemyHP +", Special = " + enemySpecial);
       
       System.out.println("What do you want to do? (a)ttack / (sp)ecial / (su)pport / quit");
+      String winner = ""; 
       String a = userInput.nextLine();
       if (a.equals("attack") || a.equals("a")){
         System.out.println(player.attack(enemy)); 
@@ -29,12 +30,19 @@ public class Game {
       if (a.equals("support") || a.equals("su")){
         System.out.println(player.support());
       }
+      if (player.getHP() < (0.5*player.getmaxHP())){
+
+      }
       if (a.equals("quit")){
         quit = true; 
       }
-    }
-    
 
-    
+      if (player.getHP() < 0){
+        System.out.println(player + "defeated the mighty " + enemy + "!");
+      }
+      else if (player.getHP() < 0){
+        System.out.println("oh no... you failed to defeat " + enemy);
+      }
+    }
   }
 }
