@@ -6,20 +6,23 @@ public class Game {
 
     String playerHP =  player.getHP() + "/" + player.getmaxHP();
     String playerSpecial = player.getSpecial() + "/" + player.getSpecialMax();
-    System.out.println("Your stats: " + " Health = " + playerHP + ", Special = " + playerSpecial);
     String enemyHP =  enemy.getHP() + "/" + enemy.getmaxHP();
     String enemySpecial = enemy.getSpecial() + "/" + enemy.getSpecialMax();
-    System.out.println("Enemy stats: Health =" + enemyHP +", Special = " + enemySpecial);
 
     //do this once
     Scanner userInput = new Scanner(System.in);
 
     //You can do the rest many times:
+    boolean quit = false; 
+    while (quit == false && player.getHP()>0 || enemy.getHP()>0){
+      System.out.println("Your stats: " + " Health = " + playerHP + ", Special = " + playerSpecial);
+      System.out.println("Enemy stats: Health =" + enemyHP +", Special = " + enemySpecial);
+      
+      System.out.println("What do you want to do? (a)ttack / (sp)ecial / (su)pport / quit");
+      String userName = userInput.nextLine();
+    }
+    
 
-    System.out.println("Enter username");
-    //Read one line of user inputCreate a class Game.java in the same classwork directory.
-    String userName = userInput.nextLine();
-    //Do something with the input
-    System.out.println("Username is: " + userName);
+    
   }
 }
