@@ -19,7 +19,19 @@ public class Game {
       System.out.println("Enemy stats: Health =" + enemyHP +", Special = " + enemySpecial);
       
       System.out.println("What do you want to do? (a)ttack / (sp)ecial / (su)pport / quit");
-      String userName = userInput.nextLine();
+      String a = userInput.nextLine();
+      if (a.equals("attack") || a.equals("a")){
+        System.out.println(player.attack(enemy)); 
+      }
+      if (a.equals("special") || a.equals("sp")){
+        System.out.println(player.specialAttack(enemy)); 
+      }
+      if (a.equals("support") || a.equals("su")){
+        System.out.println(player.support());
+      }
+      if (a.equals("quit")){
+        quit = true; 
+      }
     }
     
 
