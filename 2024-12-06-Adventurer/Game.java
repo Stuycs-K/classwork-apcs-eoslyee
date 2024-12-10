@@ -22,34 +22,34 @@ public class Game {
       System.out.println("What do you want to do? (a)ttack / (sp)ecial / (su)pport / quit");
       String winner = ""; 
       String a = userInput.nextLine();
-      if (a.equals("attack") || a.equals("a")){
-        System.out.println(player.attack(enemy)); 
-      }
-      if (a.equals("special") || a.equals("sp")){
-        System.out.println(player.specialAttack(enemy)); 
-      }
-      if (a.equals("support") || a.equals("su")){
-        System.out.println(player.support());
-      }
-
-      // Enemy attacks
-      if (enemy.getHP() > 0){
-        double rand = Math.random();
-        if (rand > 0.5 && rand < 0.75){
-          System.out.println(enemy.support());
-        }
-        else if(rand > 0.75){
-          System.out.println(enemy.specialAttack(player));
-        }
-        else{
-          System.out.println(enemy.attack(player));
-        }
-        
-      }
-
 
       if (a.equals("quit")){
-        quit = true; 
+        quit = true;
+      }
+        else{
+        if (a.equals("attack") || a.equals("a")){
+          System.out.println(player.attack(enemy)); 
+        }
+        if (a.equals("special") || a.equals("sp")){
+          System.out.println(player.specialAttack(enemy)); 
+        }
+        if (a.equals("support") || a.equals("su")){
+          System.out.println(player.support());
+        }
+
+        // Enemy attacks
+        if (enemy.getHP() > 0){
+          double rand = Math.random();
+          if (rand > 0.5 && rand < 0.75){
+            System.out.println(enemy.support());
+          }
+          else if(rand > 0.75){
+            System.out.println(enemy.specialAttack(player));
+          }
+          else{
+            System.out.println(enemy.attack(player));
+          }
+        }
       }
     }
       if (player.getHP() <= 0){
