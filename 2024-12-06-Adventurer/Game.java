@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 public class Game {
   public static void main(String[] args) {
@@ -14,9 +15,9 @@ public class Game {
 
     //You can do the rest many times:
     boolean quit = false; 
-    while (quit == false && player.getHP()>0 || enemy.getHP()>0){
-      System.out.println("Your stats: " + " Health = " + playerHP + ", Special = " + playerSpecial);
-      System.out.println("Enemy stats: Health =" + enemyHP +", Special = " + enemySpecial);
+    while (quit == false && player.getHP()>0 && enemy.getHP()>0){
+      System.out.println("Your stats: " + " Health = " + player.getHP() + "/" + player.getmaxHP() + ", Special = " + player.getSpecial() + "/" + player.getSpecialMax());
+      System.out.println("Enemy stats: Health =" + enemy.getHP() + "/" + enemy.getmaxHP() +", Special = " + enemy.getSpecial() + "/" + enemy.getSpecialMax());
       
       System.out.println("What do you want to do? (a)ttack / (sp)ecial / (su)pport / quit");
       String winner = ""; 
@@ -30,19 +31,32 @@ public class Game {
       if (a.equals("support") || a.equals("su")){
         System.out.println(player.support());
       }
-      if (player.getHP() < (0.5*player.getmaxHP())){
 
+      // Enemy attacks
+      if (enemy.getHP() > 0){
+        double rand = Math.random();
+        if (rand > 0.5 && rand < 0.75){
+          System.out.println(enemy.support());
+        }
+        else if(rand > 0.75){
+          System.out.println(enemy.specialAttack(player));
+        }
+        else{
+          System.out.println(enemy.attack(player));
+        }
+        
       }
+
+
       if (a.equals("quit")){
         quit = true; 
       }
-
-      if (player.getHP() < 0){
-        System.out.println(player + "defeated the mighty " + enemy + "!");
+    }
+      if (player.getHP() <= 0){
+        System.out.println(player + " defeated the mighty " + enemy + "!");
       }
-      else if (player.getHP() < 0){
+      else if (enemy.getHP() <= 0){
         System.out.println("oh no... you failed to defeat " + enemy);
       }
-    }
   }
 }
