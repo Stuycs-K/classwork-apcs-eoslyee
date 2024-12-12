@@ -68,7 +68,7 @@ public class Warrior extends Adventurer{
         if (other.getHP()<0){
             other.setHP(0);
         }
-        return getName() + " performed a special attack! " + other.getName() + " suffered " + damage + " damage.";
+        return getName() + " performed a special attack " + other.getName() + " suffered " + damage + " damage.";
     }
 
 }
