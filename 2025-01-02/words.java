@@ -1,20 +1,19 @@
 public class words{
 
   public static void main(String[] args){
-    System.out.println(makeWords(2, "", "abc"));
+    makeWords(2, "", "abc");
+    makeWords(3, "", "xy");
 
   }
   public static void makeWords(int remainingLetters, String result, String alphabet){
     if (remainingLetters==0){
-      return result;
-    }else{
-      for (int i = 0; i < alphabet.size(); i ++);
+      System.out.println(result);
+      return;
     }
-    int i = 0;
-    while (remainingLetters > 0){
-      result += alphabet.charAt(i);
-      remainingLetters --;
-      i ++;
-    }
+      for (int i = 0; i < alphabet.length(); i ++){
+        String newRes = result + alphabet.charAt(i); 
+        makeWords(remainingLetters-1, newRes, alphabet);
+      }
+    
   }
 }
